@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bn3isvxksbv1u"]
+[gd_scene load_steps=41 format=3 uid="uid://bn3isvxksbv1u"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_g1eda"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_qx2ab"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://1876pqglxnsg" path="res://models/props/tree-pine-small.glb" id="32_ukdga"]
 [ext_resource type="PackedScene" uid="uid://b7w3bwm7iuk8c" path="res://models/props/tree-pine-snow-small.glb" id="33_jftuk"]
 [ext_resource type="PackedScene" uid="uid://c5ssgvu3p0t41" path="res://Prefabs/rocks_2.tscn" id="34_rv4jr"]
+[ext_resource type="PackedScene" path="res://objects/dither_obstacle.tscn" id="34_wy8gy"]
 [ext_resource type="PackedScene" uid="uid://o03cclkqfdvo" path="res://models/props/door-large-open.glb" id="38_b7vj1"]
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_u8ojw"]
@@ -72,7 +73,7 @@ environment = ExtResource("1_g1eda")
 camera_attributes = SubResource("CameraAttributesPractical_u8ojw")
 
 [node name="Player" parent="." node_paths=PackedStringArray("view") instance=ExtResource("2_qx2ab")]
-transform = Transform3D(-0.907536, 0, 0.419975, 0, 1, 0, -0.419975, 0, -0.907536, -15.2511, 1.86931, 28.4103)
+transform = Transform3D(0.0055677, 0, 0.999985, 0, 1, 0, -0.999985, 0, 0.0055677, -15.2411, 1.97428, 29.2416)
 view = NodePath("../View")
 
 [node name="View" type="Node3D" parent="." node_paths=PackedStringArray("target") groups=["View"]]
@@ -83,6 +84,7 @@ target = NodePath("../Player")
 
 [node name="Camera" type="Camera3D" parent="View"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+v_offset = 1.0
 current = true
 fov = 40.0
 
@@ -372,6 +374,10 @@ transform = Transform3D(0.234394, -8.43074, -1.14049, 0.943111, 0.975222, 0.8672
 [node name="wall19" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(0.65727, -8.43074, -1.04201, 17.5834, 0.975222, -0.24221, 2.59076, -4.47993, 1.90823, 2.39165, 4.73189, 14.0659)
 
+[node name="DitherObstacle" parent="wall19" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 0.2
+max_distance_dither = 12.0
+
 [node name="wall13" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(0.109813, -10.3205, -1.55477, 0.993906, 1.19381, 0.142906, 0.00970499, -5.48409, 2.95701, 4.62902, 4.50379, 9.85361)
 
@@ -395,6 +401,9 @@ transform = Transform3D(-0.0270412, -6.4222, -3.05624, -0.244748, 0.742885, 0.28
 
 [node name="wall22" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(-0.0270412, -6.4222, -4.05983, -0.244748, 0.742885, 0.373159, -0.00238983, -3.41263, 7.72139, 7.01213, 4.45945, -4.29105)
+
+[node name="wall26" parent="." instance=ExtResource("25_p21pk")]
+transform = Transform3D(-0.0270412, -9.93378, -6.16979, -0.244748, 1.14909, 0.567095, -0.00238983, -5.27862, 11.7343, 0.605659, 5.20051, -7.69533)
 
 [node name="wall15" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(-0.0248131, -5.89303, -2.33958, -0.224582, 0.681674, 0.215042, -0.00219292, -3.13144, 4.44964, 24.1931, 2.8919, -19.0969)
@@ -459,48 +468,81 @@ transform = Transform3D(4.42496, 0.0197498, -3.86467, -0.00887395, 9.2321, 0.009
 [node name="rocks7" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(16.9331, 0.0463071, -5.86488, -0.0350893, 21.6464, 0.0148869, 6.93936, -0.00354001, 14.3112, -11.1072, 0.00225989, 13.2642)
 
+[node name="DitherObstacle" parent="rocks7" instance=ExtResource("34_wy8gy")]
+
 [node name="rocks16" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-10.0304, 0.0463071, 12.9361, 0.0189544, 21.6464, -0.02906, -15.3061, -0.00354001, -8.47732, -1.96526, 4.6039, 2.83405)
 
 [node name="rocks8" parent="." instance=ExtResource("34_rv4jr")]
-transform = Transform3D(16.9331, 0.0463071, -5.86488, -0.0350893, 21.6464, 0.0148869, 6.93936, -0.00354001, 14.3112, 0.987788, -0.0228037, 18.2209)
+transform = Transform3D(16.9331, 0.0463071, -5.86488, -0.0350893, 21.6464, 0.0148869, 6.93936, -0.00354001, 14.3112, 0.985531, -1.07795, 18.2211)
 
 [node name="rocks17" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-10.5309, 0.0463071, -12.6488, 0.0249758, 21.6464, 0.0256033, 14.9661, -0.00354001, -8.90038, 7.41537, 3.8917, 12.5157)
 
+[node name="DitherObstacle" parent="rocks17" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 9.0
+
 [node name="rocks18" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-23.2727, 0.0794215, -8.20065, 0.0521664, 37.1258, 0.0153987, 14.5541, -0.00607148, -13.1133, 16.7797, 3.87132, 10.3665)
+
+[node name="DitherObstacle" parent="rocks18" instance=ExtResource("34_wy8gy")]
 
 [node name="rocks19" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(15.6838, 0.0794214, -22.693, -0.0298676, 37.1258, 0.05113, 22.5269, -0.00607149, 15.7995, 25.2224, 3.69394, -0.382431)
 
 [node name="rocks20" parent="." instance=ExtResource("34_rv4jr")]
-transform = Transform3D(26.4119, 0.0794214, -7.5286, -0.0552796, 37.1258, 0.0204568, 7.4735, -0.00607149, 26.6068, 10.4198, 3.52896, -13.0612)
+transform = Transform3D(26.4119, 0.0794214, -7.5286, -0.0552796, 37.1258, 0.0204568, 7.4735, -0.00607149, 26.6068, 10.3822, 2.49808, -13.0233)
 
 [node name="rocks10" parent="." instance=ExtResource("34_rv4jr")]
-transform = Transform3D(15.3531, 0.0463071, 8.41625, -0.0344728, 21.6464, -0.0158824, -9.95815, -0.00354001, 12.9759, 2.49833, -3.6437, 26.1946)
+transform = Transform3D(15.3531, 0.0463071, 8.41625, -0.0344728, 21.6464, -0.0158824, -9.95815, -0.00354001, 12.9759, 2.5004, -2.67587, 26.1945)
+
+[node name="rocks25" parent="." instance=ExtResource("34_rv4jr")]
+transform = Transform3D(32.3263, 0.126517, 32.2366, -0.0753922, 59.1409, -0.0644945, -38.1445, -0.00967175, 27.3197, 11.6032, -2.69477, 29.725)
+
+[node name="rocks26" parent="." instance=ExtResource("34_rv4jr")]
+transform = Transform3D(-49.7378, 0.126517, -4.32062, 0.107238, 59.1409, 0.00236868, 5.11243, -0.00967175, -42.0345, -1.13474, -2.66446, 48.4424)
 
 [node name="rocks11" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(18.2262, 0.0463071, 1.38608, -0.0392586, 21.6464, -0.000446017, -1.64001, -0.00354, 15.4041, -3.39012, -2.04222, 34.2403)
 
+[node name="DitherObstacle" parent="rocks11" instance=ExtResource("34_wy8gy")]
+
 [node name="rocks13" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-16.6736, 0.0463071, -6.37389, 0.0369023, 21.6464, 0.0113308, 7.54161, -0.00354001, -14.0919, -12.7141, -1.01495, 38.2324)
 
+[node name="DitherObstacle" parent="rocks13" instance=ExtResource("34_wy8gy")]
+
 [node name="rocks12" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(18.2262, 0.0463071, 1.38608, -0.0392586, 21.6464, -0.000446017, -1.64001, -0.00354, 15.4041, -15.5751, -0.331642, 21.6888)
+
+[node name="DitherObstacle" parent="rocks12" instance=ExtResource("34_wy8gy")]
 
 [node name="coin" parent="." instance=ExtResource("17_03ocu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168566, 4.07146, 18.8258)
 
 [node name="coin2" parent="." instance=ExtResource("17_03ocu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3945, 5.83138, 20.4539)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.929107, 4.7848, 20.4539)
+
+[node name="coin4" parent="." instance=ExtResource("17_03ocu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.15148, 6.08043, 23.3142)
+
+[node name="coin5" parent="." instance=ExtResource("17_03ocu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15494, 7.68572, 17.9009)
 
 [node name="coin3" parent="." instance=ExtResource("17_03ocu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102358, 5.83138, 17.1608)
 
 [node name="door-large-open2" parent="." instance=ExtResource("38_b7vj1")]
-transform = Transform3D(5.36363, 0, 7.22714, 0, 9, 0, -7.22714, 0, 5.36363, 1.97159, 4.31771, -5.21367)
+transform = Transform3D(4.79639, 0, 36.2607, 0, 7.5228, 0, -6.46282, 0, 26.9109, -3.55199, 4.31771, -9.24934)
+
+[node name="DitherObstacle" parent="door-large-open2" instance=ExtResource("34_wy8gy")]
+transform = Transform3D(1.00367, 0, 0, 0, 1.00367, 0, 7.45058e-09, 0, 1.01788, 0, 0, 0)
+min_distance_dither = 1.0
+max_distance_dither = 7.0
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
+
+[editable path="rocks13"]
