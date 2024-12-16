@@ -311,7 +311,7 @@ transform = Transform3D(0.034429, -0.96931, -17.7732, -7.29056, -0.00378595, -0.
 transform = Transform3D(-7.26844, 0, -3.0402, 0, -2.32826, 0, 0.568465, 0, -38.8723, -12.3393, 26.9171, -30.1638)
 
 [node name="wall50" parent="." instance=ExtResource("25_p21pk")]
-transform = Transform3D(-7.26844, 0, -3.0402, 0, -2.32826, 0, 0.568465, 0, -38.8723, -12.3393, 36.9764, -30.1638)
+transform = Transform3D(-10.9418, 0, -3.0402, 0, -2.32826, 0, 0.855757, 0, -38.8723, -11.7, 36.9764, -30.2138)
 
 [node name="wall49" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(-7.26844, 0, -3.0402, 0, -2.05753, 0, 0.568465, 0, -38.8723, -12.3393, 24.7682, -30.1638)
@@ -734,10 +734,13 @@ trampoline_strength = 30.0
 
 [node name="trampoline21" parent="." instance=ExtResource("36_kn8kk")]
 transform = Transform3D(0.521145, 0, -2.44508, 0, 2.5, 0, 2.44508, 0, 0.521145, -16.5479, 17.5444, -37.1848)
-trampoline_strength = 30.0
+trampoline_strength = 50.0
 
 [node name="trampoline3" parent="." instance=ExtResource("36_kn8kk")]
 transform = Transform3D(0.980584, 0, 0.1961, 0, 1, 0, -0.1961, 0, 0.980584, -45, 21.902, -16.454)
+
+[node name="trampoline22" parent="." instance=ExtResource("36_kn8kk")]
+transform = Transform3D(0.999995, 0, -0.00312412, 0, 1, 0, 0.00312412, 0, 0.999995, -13.3675, 35.9879, -11.6352)
 
 [node name="trampoline15" parent="." instance=ExtResource("36_kn8kk")]
 transform = Transform3D(0.980584, 0, 0.1961, 0, 1, 0, -0.1961, 0, 0.980584, -41.9722, 20.8742, -17.0595)
