@@ -230,8 +230,17 @@ transform = Transform3D(-0.112902, -8.43074, -2.44373, 0.905281, 0.975223, -2.17
 [node name="wall12" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(0.234394, -8.43074, -1.14049, 0.943111, 0.975222, 0.867279, -0.235801, -4.47993, 2.33508, 2.48265, 6.19207, 11.6595)
 
+[node name="DitherObstacle" parent="wall12/wall2" index="1" instance=ExtResource("34_wy8gy")]
+transform = Transform3D(1, 1.19209e-07, 3.57628e-07, 3.72529e-09, 1, 0, 1.49012e-08, 0, 1, 0, 0, 0)
+min_distance_dither = 1.0
+max_distance_dither = 11.0
+
 [node name="wall19" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(0.65727, -8.43074, -1.04201, 17.5834, 0.975222, -0.24221, 2.59076, -4.47993, 1.90823, 2.39165, 4.73189, 14.0659)
+
+[node name="DitherObstacle" parent="wall19/wall2" index="1" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="DitherObstacle" parent="wall19" instance=ExtResource("34_wy8gy")]
 transform = Transform3D(1, 0, 0, -2.98023e-08, 1, -7.45058e-09, -1.19209e-07, -1.19209e-07, 1, 0, 0, 0)
@@ -243,6 +252,11 @@ transform = Transform3D(0.109813, -10.3205, -1.55477, 0.993906, 1.19381, 0.14290
 
 [node name="wall25" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(0.464957, -10.3205, 0.134192, -0.0427365, 1.19381, 1.21457, -0.884302, -5.48409, 0.0118597, 4.21662, 5.09964, 11.176)
+
+[node name="DitherObstacle" parent="wall25/wall2" index="1" instance=ExtResource("34_wy8gy")]
+transform = Transform3D(1, 0, -4.65661e-09, 0, 1, 1.19326e-09, 5.58794e-09, -5.21541e-08, 1, 0, 0, 0)
+min_distance_dither = 1.0
+max_distance_dither = 20.0
 
 [node name="wall14" parent="." instance=ExtResource("25_p21pk")]
 transform = Transform3D(-0.0270412, -6.4222, -2.37354, -0.244748, 0.742885, 0.218164, -0.00238983, -3.41263, 4.51424, 9.05997, 4.11798, 7.50745)
@@ -380,14 +394,30 @@ transform = Transform3D(4.9228, 0.0144683, 2.45788, -0.0110067, 6.76325, -0.0045
 [node name="rocks23" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(5.88435, 0.0254453, 6.81864, -0.0140825, 11.8945, -0.0138687, -9.13799, -0.0019452, 4.39084, -3.60994, 4.92683, 5.83537)
 
+[node name="DitherObstacle" parent="rocks23" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
+
 [node name="rocks40" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(4.48328, 0.0285064, -7.38794, -0.00797169, 13.3254, 0.0163518, 9.90095, -0.00217921, 3.34537, -6.44842, 7.45881, 4.25996)
+
+[node name="DitherObstacle" parent="rocks40" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks24" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(11.8924, 0.0378079, 0.252009, -0.0255006, 17.6734, 0.000801614, -0.365562, -0.00289028, 8.19826, -6.02245, 4.93228, 7.63805)
 
+[node name="DitherObstacle" parent="rocks24" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
+
 [node name="rocks22" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(11.0271, 0.0445867, 5.75926, -0.0246551, 20.8422, -0.0107262, -6.51434, -0.00340849, 9.74901, -7.429, 3.29193, 10.621)
+
+[node name="DitherObstacle" parent="rocks22" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks14" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(1.82206, 0.0144683, -4.5804, -0.00301153, 6.76325, 0.0100505, 5.41956, -0.00110605, 1.53994, -0.578988, -0.826465, 22.8621)
@@ -396,7 +426,7 @@ transform = Transform3D(1.82206, 0.0144683, -4.5804, -0.00301153, 6.76325, 0.010
 transform = Transform3D(6.43791, 0.0168985, -1.47234, -0.0134541, 7.89927, 0.00394629, 1.94597, -0.00129183, 4.871, -2.61034, -0.254128, 21.272)
 
 [node name="rocks9" parent="." instance=ExtResource("34_rv4jr")]
-transform = Transform3D(8.08004, 0.0197498, 0.974558, -0.0174631, 9.2321, -0.000900391, -1.08725, -0.0015098, 7.24257, -0.79985, 1.65701, 17.7446)
+transform = Transform3D(8.08004, 0.0197498, 0.974558, -0.0174631, 9.2321, -0.000900391, -1.08725, -0.0015098, 7.24257, -0.800043, 1.56688, 17.7446)
 
 [node name="rocks21" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(4.42496, 0.0197498, -3.86467, -0.00887395, 9.2321, 0.00903988, 3.62093, -0.0015098, 4.72284, 0.780352, 2.237, 14.8046)
@@ -409,11 +439,18 @@ transform = Transform3D(16.9331, 0.0463071, -5.86488, -0.0350893, 21.6464, 0.014
 [node name="rocks16" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-10.0304, 0.0463071, 12.9361, 0.0189544, 21.6464, -0.02906, -15.3061, -0.00354001, -8.47732, -1.96526, 4.6039, 2.83405)
 
+[node name="DitherObstacle" parent="rocks16" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
+
 [node name="rocks27" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(17.9172, 0.0463071, -3.14624, -0.0377207, 21.6464, 0.00920699, 3.72265, -0.00354002, 15.143, -5.12644, 1.92226, -5.8327)
 
 [node name="rocks42" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(17.9242, 4.30522, 0.509368, -3.56397, 21.1207, -1.55078, -0.952992, 1.98704, 15.38, -14.7766, 4.29441, -16.3233)
+
+[node name="rocks50" parent="." instance=ExtResource("34_rv4jr")]
+transform = Transform3D(16.5397, -2.16586, -6.43497, 2.27579, 21.4674, 0.489523, 7.49299, -1.73923, 14.0556, -18.2663, 2.71813, -14.2874)
 
 [node name="rocks45" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(16.1749, 4.30522, -6.5472, -4.00854, 21.1207, 0.0162976, 7.56236, 1.98704, 14.0123, -14.4504, 4.5437, -19.2379)
@@ -480,9 +517,15 @@ max_distance_dither = 9.0
 transform = Transform3D(-23.2727, 0.0794215, -8.20065, 0.0521664, 37.1258, 0.0153987, 14.5541, -0.00607148, -13.1133, 16.7784, 3.2722, 10.3666)
 
 [node name="DitherObstacle" parent="rocks18" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks19" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(15.6838, 0.0794214, -22.693, -0.0298676, 37.1258, 0.05113, 22.5269, -0.00607149, 15.7995, 22.469, 3.20352, -0.548924)
+
+[node name="DitherObstacle" parent="rocks19" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks49" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(15.6838, 0.0794214, -22.693, -0.0298676, 37.1258, 0.05113, 22.5269, -0.00607149, 15.7995, -82.5591, 22.7435, -60.2243)
@@ -490,34 +533,54 @@ transform = Transform3D(15.6838, 0.0794214, -22.693, -0.0298676, 37.1258, 0.0511
 [node name="rocks20" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(26.4119, 0.0794214, -7.5286, -0.0552796, 37.1258, 0.0204568, 7.4735, -0.00607149, 26.6068, 10.3822, 2.49808, -13.0233)
 
+[node name="DitherObstacle" parent="rocks20" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
+
 [node name="rocks10" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(15.3531, 0.0463071, 8.41625, -0.0344728, 21.6464, -0.0158824, -9.95815, -0.00354001, 12.9759, 2.5004, -2.67587, 26.1945)
 
 [node name="rocks25" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(32.3263, 0.126517, 32.2366, -0.0753922, 59.1409, -0.0644945, -38.1445, -0.00967175, 27.3197, 11.6032, -2.69477, 29.725)
 
+[node name="DitherObstacle" parent="rocks25" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
+
 [node name="rocks26" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-49.7378, 0.126517, -4.32062, 0.107238, 59.1409, 0.00236868, 5.11243, -0.00967175, -42.0345, -1.13474, -2.66446, 48.4424)
+
+[node name="DitherObstacle" parent="rocks26" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks11" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(18.2262, 0.0463071, 1.38608, -0.0392586, 21.6464, -0.000446017, -1.64001, -0.00354, 15.4041, -3.39012, -2.04222, 34.2403)
 
 [node name="DitherObstacle" parent="rocks11" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks41" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(26.6192, -1.81533, 7.13404, -0.059232, 30.2261, 2.0373, -13.9847, -3.5834, 13.5706, 2.77519, 3.22991, 35.2723)
 
 [node name="DitherObstacle" parent="rocks41" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks13" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(-16.6736, 0.0463071, -6.37389, 0.0369023, 21.6464, 0.0113308, 7.54161, -0.00354001, -14.0919, -12.7141, -1.01495, 38.2324)
 
 [node name="DitherObstacle" parent="rocks13" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks12" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(18.2262, 0.0463071, 1.38608, -0.0392586, 21.6464, -0.000446017, -1.64001, -0.00354, 15.4041, -15.5751, -0.331642, 21.6888)
 
 [node name="DitherObstacle" parent="rocks12" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 11.0
 
 [node name="rocks39" parent="." instance=ExtResource("34_rv4jr")]
 transform = Transform3D(12.4801, 0.0776412, -17.379, -0.0226569, 36.2936, 0.0386135, 24.7111, -0.00593538, 8.77716, -53.1226, 7.83578, -19.534)
@@ -549,7 +612,7 @@ max_distance_dither = 7.0
 
 [node name="trampoline" parent="." instance=ExtResource("36_kn8kk")]
 transform = Transform3D(0.889392, 0, -0.457144, 0, 1, 0, 0.457144, 0, 0.889392, 1.85544, 4.92941, -5.05659)
-trampoline_strength = 25.0
+trampoline_strength = 20.0
 
 [node name="platform-grass-large-round" parent="." instance=ExtResource("16_80m7g")]
 transform = Transform3D(1.70164, 0, 0, 0, 1, 0, 0, 0, 1.72767, -14.8131, 9.64087, -17.3465)
@@ -592,17 +655,21 @@ transform = Transform3D(-7.58043, 0, 6.32848, 0, 17.2932, 0, -15.6057, 0, -3.074
 
 [node name="DitherObstacle" parent="door-large-open9" instance=ExtResource("34_wy8gy")]
 min_distance_dither = 1.0
-max_distance_dither = 8.0
+max_distance_dither = 12.0
 
 [node name="door-large-open10" parent="." instance=ExtResource("38_3d67p")]
 transform = Transform3D(-7.58043, 0, 6.32848, 0, 17.2932, 0, -15.6057, 0, -3.07404, -31.0588, 6.64783, -30.4648)
 
 [node name="DitherObstacle" parent="door-large-open10" instance=ExtResource("34_wy8gy")]
 min_distance_dither = 1.0
-max_distance_dither = 10.0
+max_distance_dither = 12.0
 
 [node name="door-large-open11" parent="." instance=ExtResource("38_3d67p")]
-transform = Transform3D(-7.58043, 0, 6.32848, 0, 17.2932, 0, -15.6057, 0, -3.07404, -25.1143, 6.64783, -18.227)
+transform = Transform3D(-7.58043, 0, 6.32848, 0, 17.2932, 0, -15.6057, 0, -3.07404, -24.9883, 6.64783, -17.9675)
+
+[node name="DitherObstacle" parent="door-large-open11" instance=ExtResource("34_wy8gy")]
+min_distance_dither = 1.0
+max_distance_dither = 12.0
 
 [node name="door-large-open13" parent="." instance=ExtResource("38_3d67p")]
 transform = Transform3D(1.02044, 0, -7.00347, 0, 20.0454, 0, 10.6443, 0, 0.6714, -13.9456, 6.64783, -46.3803)
@@ -734,7 +801,7 @@ trampoline_strength = 30.0
 
 [node name="trampoline21" parent="." instance=ExtResource("36_kn8kk")]
 transform = Transform3D(0.521145, 0, -2.44508, 0, 2.5, 0, 2.44508, 0, 0.521145, -16.5479, 17.5444, -37.1848)
-trampoline_strength = 50.0
+trampoline_strength = 35.0
 
 [node name="trampoline3" parent="." instance=ExtResource("36_kn8kk")]
 transform = Transform3D(0.980584, 0, 0.1961, 0, 1, 0, -0.1961, 0, 0.980584, -45, 21.902, -16.454)
@@ -819,9 +886,14 @@ transform = Transform3D(1.35296, 0, 0.64768, 0, 1.5, 0, -0.64768, 0, 1.35296, -3
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
 [connection signal="pressed" from="HUD/Control/PlayAgainButton" to="HUD" method="_on_play_again_button_pressed"]
 
+[editable path="wall12"]
+[editable path="wall12/wall2"]
 [editable path="wall19"]
 [editable path="wall19/wall2"]
+[editable path="wall25"]
+[editable path="wall25/wall2"]
 [editable path="wall35"]
+[editable path="wall35/wall2"]
 [editable path="wall42"]
 [editable path="wall42/wall2"]
 [editable path="wall43"]
